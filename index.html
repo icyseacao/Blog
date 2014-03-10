@@ -27,16 +27,16 @@
         </div>
         
         <div data-role="fieldcontain">
-          <label for="name">Location(City Name):</label>
-          <textarea cols="20" rows="1" name="name" id="name"></textarea>
+          <label for="city">Location(City Name):</label>
+          <textarea cols="20" rows="1" name="city" id="city"></textarea>
         </div>
        
         <div data-role="fieldcontain">
           <fieldset data-role="controlgroup">
             <legend>Choose temperature units:</legend>
-            <input type="radio" name="unit" id="celsius" value="celsius"/>
+            <input type="radio" name="unit" id="celsius" value="c"/>
             <label for="celsius">Celsius</label>
-            <input type="radio" name="unit" id="fahrenheit" value="fahrenheit"/>
+            <input type="radio" name="unit" id="fahrenheit" value="f"/>
             <label for="fahrenheit">Fahrenheit</label>
           </fieldset>
         </div>
@@ -54,7 +54,7 @@
      
       <div data-role="footer" data-position="fixed">
         <ul>       
-        <a id="page-1" href="https://www.dragoninnovation.com"> <img src="/img/di.png">
+        <a id="page-1" href="https://www.dragoninnovation.com"> <img src="http://icyseacao.github.com/project/img/di.png">
         </a>
         </ul>
       </div>
@@ -75,7 +75,7 @@
       function saveOptions() {
         var options = {
            'gps': $("#gps").val(),
-           'name': $("#name").val(),
+           'city': $("#city").val(),
            'unit': $('input:radio[name=unit]:checked').val(),                                                      
                        }
         return options;
@@ -96,16 +96,16 @@
                                          });  
        
         $('#gps').val(getQueryVariable('gps')).change();
-        $('#name').val(getQueryVariable('name')).change();
-        if (getQueryVariable('unit') == "celsius") {
-          $('input:radio[name=unit][value=celsius]').prop('checked', true).trigger("click");
+        $('#city').val(getQueryVariable('city')).change();
+        if (getQueryVariable('unit') == "c") {
+          $('input:radio[name=unit][value=c]').prop('checked', true).trigger("click");
         } else {
-          $('input:radio[name=unit][value=fahrenheit]').prop('checked', true).trigger("click");
+          $('input:radio[name=unit][value=f]').prop('checked', true).trigger("click");
         }
         // Disable location field based on GPS toggle
-        $('#name').prop('disabled', $('#gps').val() == "true");
+        $('#city').prop('disabled', $('#gps').val() == "true");
         $('#gps').change(function() {
-          $('#name').prop('disabled', $('#gps').val() == "true");
+          $('#city').prop('disabled', $('#gps').val() == "true");
                                       });
 
       });
