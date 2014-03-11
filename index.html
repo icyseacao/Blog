@@ -62,19 +62,19 @@
     
   <script>
     function getQueryVariable(variable) {
-       var pairs = location.search.substring(1).split("&"),
-       obj = {},
-       pair,
+       var pairs = location.search.substring(1).split('&');
+       //obj = {};
+       pair;
        i;
           for ( i in pairs ) {
-              if ( pairs[i] === variable ) continue;
-               pair = pairs[i].split("=");
-      obj[ decodeURIComponent( pair[0] ) ] = decodeURIComponent( pair[1] );
+              if ( pairs[i] == variable ){
+               pair = pairs[i].split('=');
+             return decodeURIComponent( pair[1] );}
                              }
-            return obj;
+            return false;
                                           }
-        //var query = location.search.substring(1);
-        //var vars = query.split('&');
+        //var vars = location.search.substring(1).split('&');
+        //
         //for (var i = 0; i < vars.length; i++) {
         //  var pair = vars[i].split('=');
         //  if (pair[0] == variable)
