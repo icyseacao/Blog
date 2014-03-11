@@ -67,7 +67,7 @@
        pair,
        i;
           for ( i in pairs ) {
-              if ( pairs[i] === "" ) continue;
+              if ( pairs[i] === variable ) continue;
                pair = pairs[i].split("=");
       obj[ decodeURIComponent( pair[0] ) ] = decodeURIComponent( pair[1] );
                              }
