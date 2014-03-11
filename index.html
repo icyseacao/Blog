@@ -21,8 +21,8 @@
        <div data-role="fieldcontain">
           <label for="gps">GPS On/Off</label>
           <select name="gps" id="gps" data-role="slider" data-highlight="true" data-track-theme="d">
-            <option value="false">Off</option>
-            <option value="true">On</option>
+            <option value="off">Off</option>
+            <option value="on">On</option>
           </select>
         </div>
         
@@ -105,9 +105,9 @@
           $('input:radio[name=unit][value=f]').prop('checked', true).trigger("click");
         }
         // Disable location field based on GPS toggle
-        $('#city').prop('disabled', $('#gps').val() == "true");
+        $('#city').prop('disabled', $('#gps').val() == "on");
         $('#gps').change(function() {
-          $('#city').prop('disabled', $('#gps').val() == "true");
+          $('#city').prop('disabled', $('#gps').val() == "on");
                                       });
 
       });
