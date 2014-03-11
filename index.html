@@ -72,17 +72,8 @@
              return decodeURIComponent( pair[1] );}
                              }
             return false;
-                                          }
-        //var vars = location.search.substring(1).split('&');
-        //
-        //for (var i = 0; i < vars.length; i++) {
-        //  var pair = vars[i].split('=');
-        //  if (pair[0] == variable)
-        //    return decodeURIComponent(pair[1]);
-        //}
-        //return false;
-        //}
-
+                                         }
+       
       function saveOptions() {
         var options = {
            'gps': $("#gps").val(),
@@ -95,12 +86,12 @@
       $().ready(function() {
         $("#b-cancel").click(function() {
           console.log("Cancel");
-          document.location = "pebblejs://close";
+         window.location.href = "pebblejs://close#success";
                                         });
 
         $("#b-submit").click(function() {
           console.log("Submit");
-          document.location = "pebblejs://close#" + encodeURIComponent(JSON.stringify(saveOptions()));
+          window.location.href = "pebblejs://close#" + encodeURIComponent(JSON.stringify(saveOptions()));
          // console.log("Warping to: " + location);
          // console.log(location);
          // document.location = location;
