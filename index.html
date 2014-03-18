@@ -87,12 +87,12 @@
       $().ready(function() {
         $("#b-cancel").click(function() {
           console.log("Cancel");
-         window.location.href = "pebblejs://close#success";
+         document.location = "pebblejs://close";
                                         });
 
         $("#b-submit").click(function() {
           console.log("Submit");
-          window.location.href = "pebblejs://close#" + encodeURIComponent(JSON.stringify(saveOptions()));
+          document.location = "pebblejs://close#" + encodeURIComponent(JSON.stringify(saveOptions()));
          // console.log("Warping to: " + location);
          // console.log(location);
          // document.location = location;
