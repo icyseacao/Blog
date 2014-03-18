@@ -37,9 +37,9 @@
         <div data-role="fieldcontain">
           <fieldset data-role="controlgroup">
             <legend>Choose temperature units:</legend>
-            <input type="radio" name="unit" id="celsius" value="C"/>
+            <input type="radio" name="unit" id="celsius" value="c"/>
             <label for="celsius">Celsius</label>
-            <input type="radio" name="unit" id="fahrenheit" value="F"/>
+            <input type="radio" name="unit" id="fahrenheit" value="f"/>
             <label for="fahrenheit">Fahrenheit</label>
           </fieldset>
         </div>
@@ -100,10 +100,10 @@
        
         $('#gps').val(getQueryVariable('gps')).change();
         $('#city').val(getQueryVariable('city')).change();
-        if (getQueryVariable('unit') == "C") {
-          $('input:radio[name=unit][value=C]').prop('checked', true).trigger("click");
+        if (getQueryVariable('unit') == "c") {
+          $('input:radio[name=unit][value=c]').prop('checked', true).trigger("click");
         } else {
-          $('input:radio[name=unit][value=F]').prop('checked', true).trigger("click");
+          $('input:radio[name=unit][value=f]').prop('checked', true).trigger("click");
         }
         // Disable location field based on GPS toggle
         $('#city').prop('disabled', $('#gps').val() == "on");
